@@ -70,6 +70,14 @@ const nfts = [
     },
     name: 'NFT 7',
     description: 'Text and shit',
+    contract: {
+      address: '0x5D3D38d878B119cF2C85864ae7a4f73cb6e1BA7B',
+      blockchain: 'XDAI',
+    },
+    tokenId: {
+      _hex: '0x2602',
+      _isBigNumber: true,
+    },
     userId: {
       $oid: '621e8a1076e4fbccc4fbf71d',
     },

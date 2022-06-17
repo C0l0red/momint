@@ -5,6 +5,14 @@ const nftSchema: Schema = new Schema<NftDocument>({
   _id: Schema.Types.ObjectId,
   name: String,
   description: String,
+  contract: {
+    address: String,
+    blockchain: String,
+  },
+  tokenId: {
+    _hex: String,
+    _isBigNumber: Boolean,
+  },
   userId: Schema.Types.ObjectId,
 });
 

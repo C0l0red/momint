@@ -2,7 +2,7 @@
   "name": "momint",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
+    "ethers": "^5.6.8",
     "express": "^4.17.3",
     "express-validator": "^6.14.0",
     "mongoose": "^6.2.6"

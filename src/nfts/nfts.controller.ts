@@ -5,10 +5,14 @@ export default class NftsController {
   constructor(private readonly nftsService: NftsService) {}
 
   async getOwner(req: Request, res: Response, next: NextFunction) {
-    const nftId: string = req.params.nftid;
+    try {
+      const nftId: string = req.params.nftid;
 
-    const owner = await this.nftsService.getOwner(nftId);
+      const data = await this.nftsService.getOwner(nftId);
 
-    res.json(owner);
+      res.json({ message: 'NFT Owner fetched successfully', data });
+    } catch (error) {
+      next(error);
+    }
   }
 }

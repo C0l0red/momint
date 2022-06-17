@@ -20,10 +20,8 @@ app.use(paginationMiddleware);
 app.use('/user', users);
 app.use('/nft', nfts);
 
-app.use(errorResponder);
 app.use(errorLogger);
+app.use(errorResponder);
 app.use(invalidPathHandler);
 
 export default app;
-
-app.listen(5000, () => console.log('Server running'));

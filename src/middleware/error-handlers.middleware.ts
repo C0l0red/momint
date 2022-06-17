@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import APIError from '../common/exceptions/api-error.exception';
 
+
+
 export const errorLogger = (
   err: APIError,
   req: Request,
@@ -11,7 +13,7 @@ export const errorLogger = (
   next(err); // calling next middleware
 };
 
-export const errorResponder = (
+export const errorResponder = async (
   err: APIError,
   req: Request,
   res: Response,
@@ -20,7 +22,7 @@ export const errorResponder = (
   res.header('Content-Type', 'application/json');
 
   err.path = req.url;
-  res.status(err.statusCode).send(JSON.stringify(err, null, 4)); // pretty print
+  res.status(err.statusCode || 500).send(JSON.stringify(err, null, 4)); // pretty print
 };
 
 export const invalidPathHandler = (

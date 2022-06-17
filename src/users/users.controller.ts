@@ -10,9 +10,9 @@ export default class UsersController {
     const limit: number = parseInt(req.query.limit as string);
     const skip: number = parseInt(req.query.skip as string);
 
-    const nfts = await this.usersService.getNfts(id, limit, skip);
+    const data = await this.usersService.getNfts(id, limit, skip);
 
-    res.json(nfts);
+    res.json({message: 'User NFTs fetched successfully', data});
   }
 
   async getFeed(req: Request, res: Response, next: NextFunction) {
@@ -21,8 +21,8 @@ export default class UsersController {
     const limit: number = parseInt(req.query.limit as string);
     const skip: number = parseInt(req.query.skip as string);
 
-    const feed = await this.usersService.getFeed(id, limit, skip);
+    const data = await this.usersService.getFeed(id, limit, skip);
 
-    res.json(feed);
+    res.json({message: 'User Feed fetched successfully', data});
   }
 }
